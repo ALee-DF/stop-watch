@@ -1,0 +1,9 @@
+body {
+  text-align: center;
+}
+
+#minute,
+#seconds,
+#milliseconds {
+  font-size: 150px;
+}
