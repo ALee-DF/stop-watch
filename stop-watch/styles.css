@@ -7,3 +7,8 @@ body {
 #milliseconds {
   font-size: 150px;
 }
+
+#startButton {
+  color: blue;
+  font-size: 25px;
+}
