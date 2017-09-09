@@ -24,7 +24,7 @@ function seconds () {
     }
   }
   else {
-    $seconds.textContent = 00
+    $seconds.textContent = '00'
   }
 }
 
@@ -39,7 +39,7 @@ function minutes () {
     }
   }
   else {
-    $minutes.textContent = 00
+    $minutes.textContent = '00'
   }
 }
 $startButton.addEventListener('click', function () {
