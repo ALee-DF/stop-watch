@@ -16,7 +16,12 @@ function milliseconds () {
 function seconds () {
   var number = parseInt($seconds.textContent, 10)
   if (number < 59) {
-    $seconds.textContent = number + 1
+    if (number < 9) {
+      $seconds.textContent = '0' + (number + 1)
+    }
+    else {
+      $seconds.textContent = number + 1
+    }
   }
   else {
     $seconds.textContent = 00
@@ -26,7 +31,12 @@ function seconds () {
 function minutes () {
   var number = parseInt($minutes.textContent, 10)
   if (number < 59) {
-    $minutes.textContent = number + 1
+    if (number < 9) {
+      $minutes.textContent = '0' + (number + 1)
+    }
+    else {
+      $minutes.textContent = number + 1
+    }
   }
   else {
     $minutes.textContent = 00
