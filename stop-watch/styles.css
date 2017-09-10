@@ -1,0 +1,14 @@
+body {
+  text-align: center;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 150px;
+}
+
+#startButton {
+  color: blue;
+  font-size: 25px;
+}
