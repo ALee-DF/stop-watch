@@ -96,6 +96,8 @@ $startButton.addEventListener('click', function () {
   millisecondsIntervalId = setInterval(milliseconds, 100)
   secondsIntervalId = setInterval(seconds, 1000)
   minutesInterValId = setInterval(minutes, 60000)
+  $stopButton.removeAttribute('class')
+  $startButton.className = 'hideButton'
 })
 
 $stopButton.addEventListener('click', function () {
@@ -105,12 +107,17 @@ $stopButton.addEventListener('click', function () {
 })
 
 $resetButton.addEventListener('click', function () {
+  clearInterval(millisecondsIntervalId)
+  clearInterval(secondsIntervalId)
+  clearInterval(minutesInterValId)
   $millisecondsHtml.textContent = '0'
   $secondsHtml.textContent = '00'
   $minutesHtml.textContent = '00'
   $milliseconds = 0
   $seconds = 0
   $minutes = 0
+  $startButton.removeAttribute('class')
+  $stopButton.className = 'hideButton'
 })
 
 $timeLimit.addEventListener('submit', stopWatchLimit)
