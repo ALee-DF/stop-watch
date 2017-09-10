@@ -2,20 +2,35 @@ var millisecondsIntervalId
 var secondsIntervalId
 var minutesInterValId
 
-$minutes = document.querySelector('#minutes')
-$seconds = document.querySelector('#seconds')
-$milliseconds = document.querySelector('#milliseconds')
-$startButton = document.querySelector('#startButton')
-$stopButton = document.querySelector('#stopButton')
-$resetButton = document.querySelector('#resetButton')
+var $minutes = document.querySelector('#minutes')
+var $seconds = document.querySelector('#seconds')
+var $milliseconds = document.querySelector('#milliseconds')
+
+var $startButton = document.querySelector('#startButton')
+var $stopButton = document.querySelector('#stopButton')
+var $resetButton = document.querySelector('#resetButton')
+
+var $timeLimit = document.querySelector('#timeLimit')
+var $minutesLimit = '0'
+var $secondsLimit = '0'
+var $millisecondsLimit = '0'
 
 function milliseconds () {
   var number = parseInt($milliseconds.textContent, 10)
-  if (number < 9) {
-    $milliseconds.textContent = number + 1
+  if (($minutes.textContent === $minutesLimit) &&
+    ($seconds.textContent === $secondsLimit) &&
+    ($milliseconds.textContent === $millisecondsLimit)) {
+    clearInterval(millisecondsIntervalId)
+    clearInterval(secondsIntervalId)
+    clearInterval(minutesInterValId)
   }
   else {
-    $milliseconds.textContent = 0
+    if (number < 9) {
+      $milliseconds.textContent = number + 1
+    }
+    else {
+      $milliseconds.textContent = 0
+    }
   }
 }
 
@@ -49,6 +64,12 @@ function minutes () {
   }
 }
 
+function stopWatchLimit (event){
+  event.preventDefault()
+  $minutesLimit = document.querySelector('#minutesLimit').value
+  $secondsLimit = document.querySelector('#secondsLimit').value
+  $millisecondsLimit = document.querySelector('#millisecondsLimit').value
+}
 $startButton.addEventListener('click', function () {
   millisecondsIntervalId = setInterval(milliseconds, 100)
   secondsIntervalId = setInterval(seconds, 1000)
@@ -66,3 +87,5 @@ $resetButton.addEventListener('click', function () {
   $seconds.textContent = '00'
   $minutes.textContent = '00'
 })
+
+$timeLimit.addEventListener('submit', stopWatchLimit)

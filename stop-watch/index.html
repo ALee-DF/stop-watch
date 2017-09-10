@@ -7,13 +7,28 @@
   </head>
   <body>
     <h1 id="header">STOP-WATCH</h1>
-    <div id="stop-watch">
-      <p><span id="minutes">00</span>:<span id="seconds">00</span>.
+    <div>
+      <p id ="stopWatch"><span id="minutes">00</span>:<span id="seconds">00</span>.
         <span id="milliseconds">0</span></p>
     </div>
     <button id="startButton">START</button>
     <button id="stopButton"> STOP</button>
     <button id="resetButton">RESET</button>
+    <form id="timeLimit" action="">
+      <label>Minutes:<br />
+        <input type="text" id="minutesLimit" name="minutesLimit" size="3"
+          maxlength="2" />
+      </label><br />
+      <label>Seconds:<br />
+        <input type="text" id="secondsLimit" name="secondsLimit" size="3"
+          maxlength="2" />
+      </label><br />
+      <label>Milliseconds:<br />
+        <input type="text" id="millisecondsLimit" name="millisecondsLimit"
+          size="3" maxlength="1" />
+      </label><br />
+        <input type="submit" value="Submit">
+    </form>
     <script src="main.js"></script>
   </body>
 </html>
