@@ -9,6 +9,13 @@ p {
 }
 
 #startButton {
+  width: 100px;
   color: blue;
+  font-size: 25px;
+}
+
+#stopButton {
+  width: 100px;
+  color: red;
   font-size: 25px;
 }
