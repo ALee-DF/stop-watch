@@ -69,6 +69,14 @@ function stopWatchLimit (event){
   $minutesLimit = document.querySelector('#minutesLimit').value
   $secondsLimit = document.querySelector('#secondsLimit').value
   $millisecondsLimit = document.querySelector('#millisecondsLimit').value
+
+  if (parseInt($minutesLimit, 10) < 10) {
+    $minutesLimit = '0' + $minutesLimit
+  }
+
+  if (parseInt($secondsLimit, 10) < 10) {
+    $secondsLimit = '0' + $secondsLimit
+  }
 }
 $startButton.addEventListener('click', function () {
   millisecondsIntervalId = setInterval(milliseconds, 100)
