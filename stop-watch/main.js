@@ -62,7 +62,7 @@ $stopButton.addEventListener('click', function () {
 })
 
 $resetButton.addEventListener('click', function () {
-  $milliseconds.textContent = '00'
+  $milliseconds.textContent = '0'
   $seconds.textContent = '00'
   $minutes.textContent = '00'
 })
