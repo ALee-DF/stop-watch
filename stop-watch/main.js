@@ -16,9 +16,9 @@ var $resetButton = document.querySelector('#resetButton')
 var $timeLimit = document.querySelector('#timeLimit')
 var $displayTimeLimit = document.querySelector('#displayTimeLimit')
 var $submissionError = document.querySelector('#submissionError')
-var $minutesLimit
-var $secondsLimit
-var $millisecondsLimit
+var $minutesLimit = 59
+var $secondsLimit = 59
+var $millisecondsLimit = 9
 
 function milliseconds () {
   if (($minutes === $minutesLimit) &&
@@ -118,6 +118,8 @@ $resetButton.addEventListener('click', function () {
   $minutes = 0
   $startButton.removeAttribute('class')
   $stopButton.className = 'hideButton'
+  $displayTimeLimit.textContent = ''
+  $timeLimit.reset()
 })
 
 $timeLimit.addEventListener('submit', stopWatchLimit)
