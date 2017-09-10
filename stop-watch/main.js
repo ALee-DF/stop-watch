@@ -1,7 +1,12 @@
+var millisecondsIntervalId
+var secondsIntervalId
+var minutesInterValId
+
 $minutes = document.querySelector('#minutes')
 $seconds = document.querySelector('#seconds')
 $milliseconds = document.querySelector('#milliseconds')
 $startButton = document.querySelector('#startButton')
+$stopButton = document.querySelector('#stopButton')
 
 function milliseconds () {
   var number = parseInt($milliseconds.textContent, 10)
@@ -42,8 +47,15 @@ function minutes () {
     $minutes.textContent = '00'
   }
 }
+
 $startButton.addEventListener('click', function () {
-  setInterval(milliseconds, 100)
-  setInterval(seconds, 1000)
-  setInterval(minutes, 60000)
+  millisecondsIntervalId = setInterval(milliseconds, 100)
+  secondsIntervalId = setInterval(seconds, 1000)
+  minutesInterValId = setInterval(minutes, 60000)
+})
+
+$stopButton.addEventListener('click', function () {
+  clearInterval(millisecondsIntervalId)
+  clearInterval(secondsIntervalId)
+  clearInterval(minutesInterValId)
 })
