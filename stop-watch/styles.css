@@ -19,3 +19,9 @@ p {
   color: red;
   font-size: 25px;
 }
+
+#resetButton {
+  width: 100px;
+  color: green;
+  font-size: 25px;
+}
