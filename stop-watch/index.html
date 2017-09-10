@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1 id="header">STOP-WATCH</h1>
     <div>
       <p id ="stopWatch"><span id="minutes">00</span>:<span id="seconds">00</span>.
         <span id="milliseconds">0</span></p>
@@ -15,6 +14,7 @@
     <button id="stopButton"> STOP</button>
     <button id="resetButton">RESET</button>
     <form id="timeLimit" action="">
+      <p>Time Limit Set to: <span id="displayTimeLimit"></span></p>
       <label>Minutes:<br />
         <input type="text" id="minutesLimit" name="minutesLimit" size="3"
           maxlength="2" />
@@ -27,7 +27,10 @@
         <input type="text" id="millisecondsLimit" name="millisecondsLimit"
           size="3" maxlength="1" />
       </label><br />
-        <input type="submit" value="Submit">
+      <input type="submit" value="Submit">
+      <p id="submissionError" class="hideError">Error: User Must Enter Less than
+        60 Minutes, Less than 60 Seconds, and Less than 10 Milliseconds in Each
+        of the Respective Boxes.</p>
     </form>
     <script src="main.js"></script>
   </body>

@@ -25,3 +25,19 @@ body {
   color: green;
   font-size: 25px;
 }
+
+.hideError {
+  visibility: hidden;
+}
+
+.showError {
+  visibility: visible;
+}
+
+.showButton {
+  display: inline;
+}
+
+.hideButton {
+  display: none;
+}
