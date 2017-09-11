@@ -1,6 +1,7 @@
 body {
-  text-align: center;
   font-family: 'Roboto', sans-serif;
+  text-align: center;
+  background-color: rgb(94, 189, 245);
 }
 
 #stopWatch {
@@ -37,4 +38,9 @@ body {
 
 .hideButton {
   display: none;
+}
+
+#timeLimit {
+  text-align: left;
+  padding-left: 45%;
 }
