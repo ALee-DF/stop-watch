@@ -120,6 +120,7 @@ $resetButton.addEventListener('click', function () {
   $stopButton.className = 'hideButton'
   $displayTimeLimit.textContent = ''
   $timeLimit.reset()
+  $submissionError.className = 'hideError'
 })
 
 $timeLimit.addEventListener('submit', stopWatchLimit)
